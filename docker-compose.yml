@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  shoestore_backend:
+    image: shoestore_backend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: shoestore_backend
+    restart: always
+    ports:
+      - "127.0.0.1:3000:3000"
+    networks:
+      - main_network
+
+networks:
+  main_network:
+    name: main_network
